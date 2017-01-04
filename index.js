@@ -15,7 +15,7 @@ app.get('/', function(req, res) {
 
 app.get('/:date', function(req, res) {
 	function dateStringify(dateObj) {
-		var months = [];
+		var months = 'January,February,March,April,May,June,July,August,September,October,November,December'.split(',');
 		return `${months[dateObj.getMonth()]} ${dateObj.getDate()}, ${dateObj.getFullYear()}`
 	}
 	var date = req.params.date,
@@ -32,4 +32,4 @@ app.get('*', function(req, res) {
 app.listen(port);
 
 
-console.log('run')
+console.log('run at port ' + port);
